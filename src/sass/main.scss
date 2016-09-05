@@ -1,0 +1,14 @@
+.content {
+    background-color: pink;
+    box-shadow: 3px 3px 0 #000;
+    .title {
+        color: greenyellow;
+        font-size: 32 px;
+        display: flex;
+    }
+}
+
+/**
+ * .content {background-color: pink;}
+ * .content .title {color: greenyellow; font-size: 32px;}
+ */

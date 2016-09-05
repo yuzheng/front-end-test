@@ -1,0 +1,15 @@
+.content {
+  background-color: pink;
+  box-shadow: 3px 3px 0 #000; }
+  .content .title {
+    color: greenyellow;
+    font-size: 32 px;
+    display: -ms-flexbox;
+    display: flex; }
+
+/**
+ * .content {background-color: pink;}
+ * .content .title {color: greenyellow; font-size: 32px;}
+ */
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUF1QjtFQUN2QiwyQkFBMkIsRUFNOUI7RUFSRDtJQUlRLG1CQUFtQjtJQUNuQixpQkFBaUI7SUFDakIscUJBQWM7SUFBZCxjQUFjLEVBQ2pCOztBQUdMOzs7R0FHRyIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250ZW50IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBwaW5rO1xuICAgIGJveC1zaGFkb3c6IDNweCAzcHggMCAjMDAwO1xuICAgIC50aXRsZSB7XG4gICAgICAgIGNvbG9yOiBncmVlbnllbGxvdztcbiAgICAgICAgZm9udC1zaXplOiAzMiBweDtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICB9XG59XG5cbi8qKlxuICogLmNvbnRlbnQge2JhY2tncm91bmQtY29sb3I6IHBpbms7fVxuICogLmNvbnRlbnQgLnRpdGxlIHtjb2xvcjogZ3JlZW55ZWxsb3c7IGZvbnQtc2l6ZTogMzJweDt9XG4gKi8iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
