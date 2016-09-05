@@ -7,6 +7,11 @@ var sourcemap = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var del = require('del')
+
+gulp.task('clean', function(cb){
+    return del(['./dist'], cb);
+});
 
 gulp.task('images', function(){
     return gulp.src('./src/images/**/*')
@@ -34,10 +39,14 @@ gulp.task('js', function(){
      return gulp.src('./src/js/**/*')
             .pipe(sourcemap.init())
             .pipe(concat('boudle.js'))
-            .pipe(uglify())
             .pipe(sourcemap.write())
+            .pipe(gulp.dest('./dist/js/'))
+            .pipe(uglify())
+            .pipe(rename({suffix:'.min'}))
             .pipe(gulp.dest('./dist/js/'));
 });
+
+gulp.task('build', ['css','js','images'], function(){});
 
 /*
 // 練習#1
