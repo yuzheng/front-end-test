@@ -66,7 +66,7 @@ gulp.task('reload', function(){
 });
 
 // add gulp.watch
-gulp.task('watch', function(){
+gulp.task('watch', ['build'], function(){
     gulp.watch(['./src/js/**/*'],['js']);
     gulp.watch(['./src/sass/**/*'],['css']);
     gulp.watch(['./src/images/**/*'],['images']);
