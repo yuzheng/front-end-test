@@ -7,16 +7,27 @@ var sourcemap = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var del = require('del')
+var del = require('del');
+var notify = require('gulp-notify');
+var browserSync = require('browser-sync');
 
 gulp.task('clean', function(cb){
     return del(['./dist'], cb);
 });
 
+gulp.task('default', function(){
+    return browserSync.init({
+        server: {
+            baseDir:'./'
+        }
+    });
+});
+
 gulp.task('images', function(){
     return gulp.src('./src/images/**/*')
             .pipe(imagemin())
-            .pipe(gulp.dest('./dist/images/'));
+            .pipe(gulp.dest('./dist/images/'))
+            .pipe(notify('images task complete'));
 });
 
 gulp.task('css', function(){
@@ -31,7 +42,8 @@ gulp.task('css', function(){
             .pipe(gulp.dest('./dist/css/'))
             .pipe(cleanCss())
             .pipe(rename({suffix:'.min'}))
-            .pipe(gulp.dest('./dist/css/'));
+            .pipe(gulp.dest('./dist/css/'))
+            .pipe(notify("Found file: <%= file.relative %>!"));
             
 });
 
@@ -43,11 +55,18 @@ gulp.task('js', function(){
             .pipe(gulp.dest('./dist/js/'))
             .pipe(uglify())
             .pipe(rename({suffix:'.min'}))
-            .pipe(gulp.dest('./dist/js/'));
+            .pipe(gulp.dest('./dist/js/'))
+            .pipe(notify("Found file: <%= file.relative %>!"));
 });
 
 gulp.task('build', ['css','js','images'], function(){});
 
+// add gulp.watch
+gulp.task('watch', function(){
+    gulp.watch(['./src/js/**/*'],['js']);
+    gulp.watch(['./src/sass/**/*'],['css']);
+    gulp.watch(['./src/images/**/*'],['images']);
+});
 /*
 // 練習#1
 // 先執行css,js任務後在執行images
