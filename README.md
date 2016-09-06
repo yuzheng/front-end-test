@@ -6,6 +6,11 @@
 - install gulp
     $ sudo npm install -g gulp
 
+## 建立 node project
+> npm init
+
+## 建立 gulpfile.js
+
 ## Gulp Tasks
 There are some examples of gulp tasks like image, css and js. 使用到的gulp api包含task, src 與 dest
 - images
