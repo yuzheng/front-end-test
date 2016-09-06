@@ -38,4 +38,10 @@ There are some examples of gulp tasks like image, css and js. 使用到的gulp a
 - clean
   清除建立dist的檔案資料
 
-
+## 進一步
+- notify
+    - gulp-notify
+- watch
+    Gulp watch
+- browsersync
+    -  browser-sync
