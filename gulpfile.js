@@ -15,7 +15,7 @@ gulp.task('clean', function(cb){
     return del(['./dist'], cb);
 });
 
-gulp.task('default', function(){
+gulp.task('default', ['watch'], function(){
     return browserSync.init({
         server: {
             baseDir:'./'
@@ -61,11 +61,16 @@ gulp.task('js', function(){
 
 gulp.task('build', ['css','js','images'], function(){});
 
+gulp.task('reload', function(){
+    browserSync.reload();
+});
+
 // add gulp.watch
 gulp.task('watch', function(){
     gulp.watch(['./src/js/**/*'],['js']);
     gulp.watch(['./src/sass/**/*'],['css']);
     gulp.watch(['./src/images/**/*'],['images']);
+    gulp.watch('./dist/**/*',['reload']);  // reload 
 });
 /*
 // 練習#1
